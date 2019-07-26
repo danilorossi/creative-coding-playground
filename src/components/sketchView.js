@@ -49,11 +49,11 @@ function SketchView({component, renderer, settings, fileName, showRefresh, paylo
         <Highlight language={'javascript'}>
           {renderer.toString()}
         </Highlight>
-        <Typography>
+        {false && <Typography>
            <Link target="_blank" rel="noopener" href={`/todo/${fileName}`} className={classes.link}>
              View this file on GitHub
            </Link>
-       </Typography>
+       </Typography>}
        </div>
      }
 

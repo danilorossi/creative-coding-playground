@@ -3,8 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import {
   AppBar,
   Toolbar,
-  Typography,
+  Typography,Chip
 } from '@material-ui/core';
+
 
 function SiteHeader({ title }) {
 
@@ -14,7 +15,7 @@ function SiteHeader({ title }) {
     <AppBar position="fixed" className={classes.appBar}>
       <Toolbar>
         <Typography variant="h6" noWrap>
-        { title }
+        { title }  <Chip color="secondary" size="small" label="Beta" />
         </Typography>
       </Toolbar>
     </AppBar>
