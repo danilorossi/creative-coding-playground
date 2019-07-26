@@ -38,7 +38,6 @@ export const sentenceGrid = (payload) => async ({ context, width, height }) => {
     'SpaceGrotesk-Bold',
     `url(${fontUrl})`
   );
-try {
   // We use async/await ES6 syntax to wait for the font to load
   await font.load();
 
@@ -46,7 +45,6 @@ try {
   document.fonts.add(font);
 
 
-} catch(e) { console.log(e)}
   const margin = width * 0.175;
 
   context.fillStyle = bgColor;

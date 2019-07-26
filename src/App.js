@@ -17,6 +17,7 @@ import { randomKonamiGrid } from './renderers/examples/randomKonamiGrid';
 import { randomGridPainting } from './renderers/examples/randomGridPainting';
 
 import { sentenceGrid } from './renderers/experiments/sentenceGrid';
+import { generativeWallDrawing } from './renderers/experiments/generativeWallDrawing';
 
 const headSections = [{
   title: 'About',
@@ -63,6 +64,12 @@ const experiments = [{
   payload: {
     sentence: 'Well, have you heard the great news?'
   }
+}, {
+  title: 'Generative Wall Drawing',
+  fileName: 'generativeWallDrawing.js',
+  component: CanvasSketchWrapper,
+  renderer: generativeWallDrawing,
+  showRefresh: true,
 }]
 
 function App() {
