@@ -6,9 +6,10 @@ import {
 } from '@material-ui/core';
 
 import CanvasSketchWrapper from './components/canvasSketchWrapper';
-import SideMenu from  './components/sideMenu';
-import SiteHeader from  './components/siteHeader';
-import SketchView from  './components/sketchView';
+import SideMenu from './components/sideMenu';
+import SiteHeader from './components/siteHeader';
+import SketchView from './components/sketchView';
+import AboutPage from './components/pages/aboutPage';
 
 import { simpleGrid } from './renderers/examples/simpleGrid';
 import { randomGrid } from './renderers/examples/randomGrid';
@@ -21,6 +22,7 @@ import { generativeWallDrawing } from './renderers/experiments/generativeWallDra
 
 const headSections = [{
   title: 'About',
+  component: AboutPage
 }]
 
 const examples = [{
@@ -108,8 +110,8 @@ function App() {
         {headSections
           .filter(({ title }) => title === selectedSection)
           .map(
-            ({ title }, index) => {
-              return (<div key={index}> <h2>{title}</h2> </div>)
+            ({ component }, index) => {
+              return React.createElement(component, { key: index });
             }
           )}
 
