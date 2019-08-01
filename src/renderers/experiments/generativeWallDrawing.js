@@ -6,18 +6,16 @@ const palettes = require('nice-color-palettes/1000.json');
 random.setSeed(random.getRandomSeed());
 
 
-export const generativeWallDrawing = (payload) => ({ context, width, height }) => {
+export const generativeWallDrawing = ({ gridSize }) => ({ context, width, height }) => {
 
   const palette = random.pick(palettes)
 
-  const count = 6;
-
   const createGrid = () => {
    const points = [];
-   for (let x = 0; x < count; x++) {
-     for (let y = 0; y < count; y++) {
-       const u = x / (count - 1);
-       const v = y / (count - 1);
+   for (let x = 0; x < gridSize; x++) {
+     for (let y = 0; y < gridSize; y++) {
+       const u = x / (gridSize - 1);
+       const v = y / (gridSize - 1);
        points.push([ u, v ]);
      }
    }

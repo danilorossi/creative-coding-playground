@@ -72,6 +72,19 @@ const experiments = [{
   component: CanvasSketchWrapper,
   renderer: generativeWallDrawing,
   showRefresh: true,
+  payload: {
+    gridSize: 20
+  },
+  uiMeta: [{
+    field: 'gridSize',
+    label: 'Grid size',
+    defaultValue: 10,
+    type: 'number',
+    type: 'range',
+    min: 5,
+    max: 100,
+    step: 5
+  }]
 }]
 
 function App() {
@@ -137,8 +150,7 @@ function App() {
           {experiments
             .filter(({ title }) => title === selectedSection)
             .map(
-              ({ component, renderer, settings, fileName, showRefresh, payload }, index) => {
-
+              ({ component, renderer, settings, fileName, showRefresh, payload, uiMeta }, index) => {
                 return <SketchView
                   component={component}
                   renderer={renderer}
@@ -146,6 +158,7 @@ function App() {
                   fileName={fileName}
                   showRefresh={showRefresh}
                   payload={payload}
+                  uiMeta={uiMeta}
                   value={value}
                   handleTabChange={handleTabChange}
                   key={index}

@@ -13,10 +13,10 @@ import {
   Link
 } from '@material-ui/core';
 
-function SketchView({component, renderer, settings, fileName, showRefresh, payload, value, handleTabChange, key}) {
+function SketchView({component, renderer, settings, fileName, showRefresh, payload, uiMeta, value, handleTabChange, key}) {
   const classes = useStyles();
   return (
-    <div>
+    <div key={Date.now()}>
 
       <Paper className={classes.root}>
        <Tabs
@@ -41,6 +41,7 @@ function SketchView({component, renderer, settings, fileName, showRefresh, paylo
              settings,
              showRefreshButton: showRefresh,
              payload,
+             uiMeta,
          })}
       </div>
      }
