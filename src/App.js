@@ -5,87 +5,15 @@ import {
   CssBaseline,
 } from '@material-ui/core';
 
-import CanvasSketchWrapper from './components/canvasSketchWrapper';
 import SideMenu from './components/sideMenu';
 import SiteHeader from './components/siteHeader';
-import SketchView from './components/sketchView';
-import AboutPage from './components/pages/aboutPage';
+import SketchPage from './components/pages/sketchPage';
 
-import { simpleGrid } from './renderers/examples/simpleGrid';
-import { randomGrid } from './renderers/examples/randomGrid';
-import { randomColorSizeGrid } from './renderers/examples/randomColorSizeGrid';
-import { randomKonamiGrid } from './renderers/examples/randomKonamiGrid';
-import { randomGridPainting } from './renderers/examples/randomGridPainting';
-
-import { sentenceGrid } from './renderers/experiments/sentenceGrid';
-import { generativeWallDrawing } from './renderers/experiments/generativeWallDrawing';
-
-const headSections = [{
-  title: 'About',
-  component: AboutPage
-}]
-
-const examples = [{
-  title: 'Simple Grid',
-  fileName: 'simpleGrid.js',
-  component: CanvasSketchWrapper,
-  renderer: simpleGrid,
-  showRefresh: false,
-}, {
-  title: 'Random Grid',
-  fileName: 'randomGrid.js',
-  component: CanvasSketchWrapper,
-  renderer: randomGrid,
-  showRefresh: true
-}, {
-  title: 'Random Color & Size Grid',
-  fileName: 'randomColorSizeGrid.js',
-  component: CanvasSketchWrapper,
-  renderer: randomColorSizeGrid,
-  showRefresh: true
-}, {
-  title: 'Random Konami Grid',
-  fileName: 'randomKonamiGrid.js',
-  component: CanvasSketchWrapper,
-  renderer: randomKonamiGrid,
-  showRefresh: true
-}, {
-  title: 'Random Grid Painting',
-  fileName: 'randomGridPainting.js',
-  component: CanvasSketchWrapper,
-  renderer: randomGridPainting,
-  showRefresh: true
-}]
-
-const experiments = [{
-  title: 'Sentence Grid',
-  fileName: 'sentenceGrid.js',
-  component: CanvasSketchWrapper,
-  renderer: sentenceGrid,
-  showRefresh: true,
-  payload: {
-    sentence: 'Well, have you heard the great news?'
-  }
-}, {
-  title: 'Generative Wall Drawing',
-  fileName: 'generativeWallDrawing.js',
-  component: CanvasSketchWrapper,
-  renderer: generativeWallDrawing,
-  showRefresh: true,
-  payload: {
-    gridSize: 20
-  },
-  uiMeta: [{
-    field: 'gridSize',
-    label: 'Grid size',
-    defaultValue: 10,
-    type: 'number',
-    type: 'range',
-    min: 5,
-    max: 100,
-    step: 5
-  }]
-}]
+import {
+  headSections,
+  examples,
+  experiments,
+} from './playgroundContent';
 
 function App() {
 
@@ -133,7 +61,7 @@ function App() {
           .map(
             ({ component, renderer, settings, fileName, showRefresh }, index) => {
 
-              return <SketchView
+              return <SketchPage
                 component={component}
                 renderer={renderer}
                 settings={settings}
@@ -151,7 +79,7 @@ function App() {
             .filter(({ title }) => title === selectedSection)
             .map(
               ({ component, renderer, settings, fileName, showRefresh, payload, uiMeta }, index) => {
-                return <SketchView
+                return <SketchPage
                   component={component}
                   renderer={renderer}
                   settings={settings}

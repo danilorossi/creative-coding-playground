@@ -13,7 +13,7 @@ import {
   Link
 } from '@material-ui/core';
 
-function SketchView({component, renderer, settings, fileName, showRefresh, payload, uiMeta, value, handleTabChange, key}) {
+function SketchPage({component, renderer, settings, fileName, showRefresh, payload, uiMeta, value, handleTabChange, key}) {
   const classes = useStyles();
   return (
     <div key={Date.now()}>
@@ -71,4 +71,4 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default SketchView;
+export default SketchPage;

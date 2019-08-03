@@ -10,6 +10,7 @@ import {
 
 const drawerWidth = 200;
 
+// TODO use responsive drawer
 function SideMenu({ headSections, examples, experiments, selected, onSelect }) {
 
   const classes = useStyles();
