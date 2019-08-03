@@ -2,7 +2,7 @@ const { lerp } = require('canvas-sketch-util/math');
 const palettes = require('nice-color-palettes/1000.json');
 const random = require('canvas-sketch-util/random');
 
-export const randomColorSizeGrid = (payload) => ({ context, width, height }) => {
+const randomColorSizeGrid = (payload) => ({ context, width, height }) => {
   let palette = random.pick(palettes);
 
 palette = random.shuffle(palette);
@@ -54,4 +54,11 @@ const count = 30;
        context.fillStyle = color;
        context.fill();
      });
+};
+
+export const randomColorSizeGridSketchMeta = {
+  title: 'Random Color & Size Grid',
+  fileName: 'randomColorSizeGrid.js',
+  renderer: randomColorSizeGrid,
+  showRefresh: true
 };

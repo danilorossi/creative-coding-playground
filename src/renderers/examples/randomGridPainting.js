@@ -2,7 +2,7 @@ const { lerp } = require('canvas-sketch-util/math');
 const palettes = require('nice-color-palettes/1000.json');
 const random = require('canvas-sketch-util/random');
 
-export const randomGridPainting = (payload) => async ({ context, width, height }) => {
+const randomGridPainting = (payload) => async ({ context, width, height }) => {
 
   const count = 60;
   const margin = width * 0.15;
@@ -64,4 +64,11 @@ export const randomGridPainting = (payload) => async ({ context, width, height }
       context.fillText(character, 0, 0);
       context.restore();
     });
+};
+
+export const randomGridPaintingSketchMeta = {
+  title: 'Random Grid Painting',
+  fileName: 'randomGridPainting.js',
+  renderer: randomGridPainting,
+  showRefresh: true
 };

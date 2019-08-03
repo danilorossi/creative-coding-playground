@@ -1,3 +1,5 @@
+import { NUMERIC_RANGE } from '../../globals/payloadFieldTypes';
+
 const { lerp } = require('canvas-sketch-util/math');
 const random = require('canvas-sketch-util/random');
 const palettes = require('nice-color-palettes/1000.json');
@@ -6,7 +8,7 @@ const palettes = require('nice-color-palettes/1000.json');
 random.setSeed(random.getRandomSeed());
 
 
-export const generativeWallDrawing = ({ gridSize }) => ({ context, width, height }) => {
+const generativeWallDrawing = ({ gridSize }) => ({ context, width, height }) => {
 
   const palette = random.pick(palettes)
 
@@ -76,4 +78,23 @@ export const generativeWallDrawing = ({ gridSize }) => ({ context, width, height
     context.stroke();
     context.fill()
   });
+};
+
+export const generativeWallDrawingSketchMeta = {
+  title: 'Generative Wall Drawing',
+  fileName: 'generativeWallDrawing.js',
+  renderer: generativeWallDrawing,
+  showRefresh: true,
+  payload: {
+    gridSize: 20
+  },
+  payloadSchema: [{
+    field: 'gridSize',
+    label: 'Grid size',
+    defaultValue: 10,
+    type: NUMERIC_RANGE,
+    min: 5,
+    max: 100,
+    step: 5
+  }]
 };

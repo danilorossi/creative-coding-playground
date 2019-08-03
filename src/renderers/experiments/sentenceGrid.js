@@ -2,7 +2,7 @@ const { lerp } = require('canvas-sketch-util/math');
 const random = require('canvas-sketch-util/random');
 const palettes = require('nice-color-palettes/1000.json');
 
-export const sentenceGrid = (payload) => async ({ context, width, height }) => {
+const sentenceGrid = (payload) => async ({ context, width, height }) => {
   const sentence = payload.sentence.toUpperCase()
   const count = Math.ceil(Math.sqrt(sentence.length));
   const chars = sentence.split('');
@@ -73,4 +73,14 @@ export const sentenceGrid = (payload) => async ({ context, width, height }) => {
     context.textBaseline = 'middle';
     context.fillText(character, x, y+5);
   });
+};
+
+export const sentenceGridSketchMeta = {
+  title: 'Sentence Grid',
+  fileName: 'sentenceGrid.js',
+  renderer: sentenceGrid,
+  showRefresh: true,
+  payload: {
+    sentence: 'Well, have you heard the great news?'
+  }
 };

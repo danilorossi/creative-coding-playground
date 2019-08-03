@@ -1,6 +1,9 @@
+
+import { NUMERIC_RANGE } from '../../globals/payloadFieldTypes';
+
 const { lerp } = require('canvas-sketch-util/math');
 
-export const randomGrid = ({ gridSize }) => ({ context, width, height }) => {
+const randomGrid = ({ gridSize }) => ({ context, width, height }) => {
 
   const count = gridSize;
   const margin = width * 0.15;
@@ -32,4 +35,23 @@ export const randomGrid = ({ gridSize }) => ({ context, width, height }) => {
       context.fillStyle = '#fff';
       context.fill();
     });
+};
+
+export const randomGridSketchMeta = {
+  title: 'Random Grid',
+  fileName: 'randomGrid.js',
+  renderer: randomGrid,
+  showRefresh: true,
+  payload: {
+    gridSize: 40
+  },
+  payloadSchema: [{
+    field: 'gridSize',
+    label: 'Grid size',
+    defaultValue: 40,
+    type: NUMERIC_RANGE,
+    min: 4,
+    max: 60,
+    step: 5
+  }]
 };

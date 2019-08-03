@@ -1,9 +1,7 @@
 const { lerp } = require('canvas-sketch-util/math');
 const random = require('canvas-sketch-util/random');
 
-export const randomKonamiGrid = (payload) => async ({ context, width, height }) => {
-
-
+const randomKonamiGrid = (payload) => async ({ context, width, height }) => {
 
   const count = 20;
   const characters = '←↑→↓AB'.split('');
@@ -64,6 +62,11 @@ export const randomKonamiGrid = (payload) => async ({ context, width, height }) 
         context.textBaseline = 'middle';
         context.fillText(character, x, y);
       });
+};
 
-
+export const randomKonamiGridSketchMeta = {
+  title: 'Random Konami Grid',
+  fileName: 'randomKonamiGrid.js',
+  renderer: randomKonamiGrid,
+  showRefresh: true
 };

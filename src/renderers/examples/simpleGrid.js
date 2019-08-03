@@ -1,6 +1,6 @@
 const { lerp } = require('canvas-sketch-util/math');
 
-export const simpleGrid = (payload) => ({ context, width, height }) => {
+const simpleGrid = (payload) => ({ context, width, height }) => {
 
   const count = 8;
 
@@ -33,4 +33,11 @@ export const simpleGrid = (payload) => ({ context, width, height }) => {
     context.lineWidth = 20;
     context.stroke();
   });
+};
+
+export const simpleGridSketchMeta = {
+  title: 'Simple Grid',
+  fileName: 'simpleGrid.js',
+  renderer: simpleGrid,
+  showRefresh: false,
 };
