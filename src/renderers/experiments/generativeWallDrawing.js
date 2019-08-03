@@ -27,7 +27,7 @@ export const generativeWallDrawing = ({ gridSize }) => ({ context, width, height
 
 
   const createTuples = (points) => {
-    const result = new Array();
+    const result = []
     const shuffled = random.shuffle(points);
     while(shuffled.length > 2) {
       const t = shuffled.splice(0, 2)

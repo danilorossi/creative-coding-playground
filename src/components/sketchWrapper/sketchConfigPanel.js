@@ -2,7 +2,6 @@ import React from 'react';
 import {
   makeStyles,
   Typography,
-  Slider,
   ExpansionPanel,
   ExpansionPanelSummary,
   ExpansionPanelDetails
@@ -33,16 +32,22 @@ const useStyles = makeStyles(theme => ({
 const createConfigUIElements = (sketchConfiPanelgMeta, sketchPayload, onFieldValueChange) => {
   return (sketchConfiPanelgMeta && sketchConfiPanelgMeta.length > 0) ?
     sketchConfiPanelgMeta.map((uiController, idx) => {
+      let uiElement = null;
       switch(uiController.type) {
         case NUMERIC_RANGE:
-          return (<div key={idx} style={{ width: '100%'}}>
+          uiElement = (<div key={idx} style={{ width: '100%'}}>
             <RangeSlider
               onFieldValueChange={onFieldValueChange}
               uiControlMeta={uiController}
               originalPayload={sketchPayload}
             />
           </div>);
+          break;
+        default:
+          uiElement = null;
+          break;
       }
+      return uiElement;
     }) : [];
 }
 

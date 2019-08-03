@@ -30,7 +30,6 @@ function RangeSlider({
       valueLabelDisplay="on"
       defaultValue={ value }
       aria-labelledby="discrete-slider"
-      valueLabelDisplay="auto"
       step={ step }
       onChangeCommitted={onSliderChange}
       marks

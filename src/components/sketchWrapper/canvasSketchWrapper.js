@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { makeStyles, Fab, Typography, Divider, Button } from '@material-ui/core';
-import { Refresh, Loop } from '@material-ui/icons';
+import { makeStyles, Fab } from '@material-ui/core';
+import { Loop } from '@material-ui/icons';
 import canvasSketch from 'canvas-sketch';
 import SketchConfigPanel from './sketchConfigPanel';
 
