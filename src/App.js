@@ -59,14 +59,10 @@ function App() {
         {examples
           .filter(({ title }) => title === selectedSection)
           .map(
-            ({ component, renderer, settings, fileName, showRefresh }, index) => {
+            (sketchMeta, index) => {
 
               return <SketchPage
-                component={component}
-                renderer={renderer}
-                settings={settings}
-                fileName={fileName}
-                showRefresh={showRefresh}
+                sketchMeta={sketchMeta}
                 value={value}
                 handleTabChange={handleTabChange}
                 key={index}
@@ -78,15 +74,10 @@ function App() {
           {experiments
             .filter(({ title }) => title === selectedSection)
             .map(
-              ({ component, renderer, settings, fileName, showRefresh, payload, uiMeta }, index) => {
+              (sketchMeta, index) => {
+
                 return <SketchPage
-                  component={component}
-                  renderer={renderer}
-                  settings={settings}
-                  fileName={fileName}
-                  showRefresh={showRefresh}
-                  payload={payload}
-                  uiMeta={uiMeta}
+                  sketchMeta={sketchMeta}
                   value={value}
                   handleTabChange={handleTabChange}
                   key={index}

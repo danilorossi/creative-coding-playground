@@ -13,7 +13,11 @@ import {
   Link
 } from '@material-ui/core';
 
-function SketchPage({component, renderer, settings, fileName, showRefresh, payload, uiMeta, value, handleTabChange, key}) {
+function SketchPage({ sketchMeta, value, handleTabChange, key }) {
+  const {
+    component, renderer, settings, fileName, showRefresh, payload, payloadSchema,
+  } = sketchMeta;
+
   const classes = useStyles();
   return (
     <div key={Date.now()}>
@@ -41,7 +45,7 @@ function SketchPage({component, renderer, settings, fileName, showRefresh, paylo
              settings,
              showRefreshButton: showRefresh,
              payload,
-             uiMeta,
+             payloadSchema,
          })}
       </div>
      }
@@ -51,7 +55,7 @@ function SketchPage({component, renderer, settings, fileName, showRefresh, paylo
           {renderer.toString()}
         </Highlight>
         {false && <Typography>
-           <Link target="_blank" rel="noopener" href={`/todo/${fileName}`} className={classes.link}>
+           <Link target="_blank" rel="noopener" href={`//TODO/${fileName}`} className={classes.link}>
              View this file on GitHub
            </Link>
        </Typography>}

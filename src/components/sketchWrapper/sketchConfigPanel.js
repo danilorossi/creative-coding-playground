@@ -9,7 +9,9 @@ import {
 } from '@material-ui/core';
 
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import {Tune } from '@material-ui/icons';
+import { Tune } from '@material-ui/icons';
+import { NUMERIC_RANGE } from '../../globals/payloadFieldTypes';
+import RangeSlider from './sketchConfigElements/rangeSlider';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -28,50 +30,16 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-
-const DynamicSlider = ({ onFieldValueChange, uiController, payload }) => {
-    const {
-      label,
-      field,
-      defaultValue,
-      min,
-      max,
-      step
-    } = uiController;
-    const onSliderChange = (evt, value) => {
-      onFieldValueChange(field, value)
-    }
-    const value = payload[field] || defaultValue
-    return (<>
-      <Typography id="discrete-slider" gutterBottom>
-        { label }
-      </Typography>
-      <Slider
-        valueLabelDisplay="on"
-        defaultValue={ payload[field] || defaultValue }
-        aria-labelledby="discrete-slider"
-        valueLabelDisplay="auto"
-        step={ step }
-        onChangeCommitted={onSliderChange}
-        marks
-        min={ min }
-        max={ max }
-      />
-    </>)
-}
-
 const createConfigUIElements = (sketchConfiPanelgMeta, sketchPayload, onFieldValueChange) => {
   return (sketchConfiPanelgMeta && sketchConfiPanelgMeta.length > 0) ?
     sketchConfiPanelgMeta.map((uiController, idx) => {
       switch(uiController.type) {
-        case 'range':
-          const { label } = uiController
+        case NUMERIC_RANGE:
           return (<div key={idx} style={{ width: '100%'}}>
-
-            <DynamicSlider
+            <RangeSlider
               onFieldValueChange={onFieldValueChange}
-              uiController={uiController}
-              payload={sketchPayload}
+              uiControlMeta={uiController}
+              originalPayload={sketchPayload}
             />
           </div>);
       }

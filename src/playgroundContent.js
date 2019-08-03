@@ -1,5 +1,7 @@
 import CanvasSketchWrapper from './components/sketchWrapper/canvasSketchWrapper';
 
+import { NUMERIC_RANGE } from './globals/payloadFieldTypes';
+
 import AboutPage from './components/pages/aboutPage';
 
 import { simpleGrid } from './renderers/examples/simpleGrid';
@@ -27,7 +29,19 @@ export const examples = [{
   fileName: 'randomGrid.js',
   component: CanvasSketchWrapper,
   renderer: randomGrid,
-  showRefresh: true
+  showRefresh: true,
+  payload: {
+    gridSize: 40
+  },
+  payloadSchema: [{
+    field: 'gridSize',
+    label: 'Grid size',
+    defaultValue: 40,
+    type: NUMERIC_RANGE,
+    min: 4,
+    max: 60,
+    step: 5
+  }]
 }, {
   title: 'Random Color & Size Grid',
   fileName: 'randomColorSizeGrid.js',
@@ -66,12 +80,11 @@ export const experiments = [{
   payload: {
     gridSize: 20
   },
-  uiMeta: [{
+  payloadSchema: [{
     field: 'gridSize',
     label: 'Grid size',
     defaultValue: 10,
-    type: 'number',
-    type: 'range',
+    type: NUMERIC_RANGE,
     min: 5,
     max: 100,
     step: 5

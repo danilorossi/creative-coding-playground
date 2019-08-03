@@ -1,8 +1,8 @@
 const { lerp } = require('canvas-sketch-util/math');
 
-export const randomGrid = (payload) => ({ context, width, height }) => {
+export const randomGrid = ({ gridSize }) => ({ context, width, height }) => {
 
-  const count = 40;
+  const count = gridSize;
   const margin = width * 0.15;
   const padding = 20;
   const tileSize = (width - margin * 2) / count - padding;

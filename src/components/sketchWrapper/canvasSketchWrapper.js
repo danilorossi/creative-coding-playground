@@ -30,7 +30,7 @@ function CanvasSketchWrapper({
   // TODO make panel config view only if false?
   showRefreshButton = false,
   payload = null,
-  uiMeta = null,
+  payloadSchema = null,
 }) {
 
   const classes = useStyles();
@@ -57,7 +57,7 @@ function CanvasSketchWrapper({
   const onFieldValueChange = (fieldKey, nextValue) => {
     setTemporaryPayload({...payload, [fieldKey]:nextValue})
   }
-  const showConfigPanel = uiMeta && uiMeta.length > 0;
+  const showConfigPanel = payloadSchema && payloadSchema.length > 0;
 
   return (
     <>
@@ -68,7 +68,7 @@ function CanvasSketchWrapper({
           {showConfigPanel &&
           <SketchConfigPanel
             sketchPayload={payload}
-            sketchConfiPanelgMeta={uiMeta}
+            sketchConfiPanelgMeta={payloadSchema}
             onFieldValueChange={onFieldValueChange}
           />}
 
