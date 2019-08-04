@@ -5,6 +5,10 @@ Creative Coding Playground is a page I am developing in my free time as a learni
 ## Spaghetti code warning!
 This is a <b>work-in-progress proof of concept</b> and it's not meant, for now, to be a reference on any topic in any way - JS, React, canvas, project structure, etc.
 
+## Demo
+
+Check the demo at [https://danilorossi.github.io/creative-coding-playground/](https://danilorossi.github.io/creative-coding-playground/)
+
 ## Next steps
 - Refactor renderer files as they are not currently structured and there is a lot of duplication (also useful for code showing purposes on the webpage)
 - Delegate heavy computation to a WebWorker - using Context APIs most probably
