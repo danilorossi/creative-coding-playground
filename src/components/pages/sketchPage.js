@@ -13,7 +13,7 @@ import {
   Link
 } from '@material-ui/core';
 
-function SketchPage({ sketchMeta, value, handleTabChange, key }) {
+function SketchPage({ sketchMeta, value, handleTabChange }) {
   const {
     component, renderer, settings, fileName, showRefresh, payload, payloadSchema,
   } = sketchMeta;
@@ -40,7 +40,6 @@ function SketchPage({ sketchMeta, value, handleTabChange, key }) {
      {value === 0 &&
        <div style={{ padding: 25, marginTop: 10, background: 'white' }}>
         {React.createElement(component, {
-             key,
              renderer,
              settings,
              showRefreshButton: showRefresh,

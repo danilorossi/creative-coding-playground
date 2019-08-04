@@ -1,7 +1,5 @@
 import CanvasSketchWrapper from './components/sketchWrapper/canvasSketchWrapper';
 
-import { NUMERIC_RANGE } from './globals/payloadFieldTypes';
-
 import AboutPage from './components/pages/aboutPage';
 
 import { simpleGridSketchMeta } from './renderers/examples/simpleGrid';

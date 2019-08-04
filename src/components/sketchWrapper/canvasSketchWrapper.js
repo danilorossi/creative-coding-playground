@@ -24,7 +24,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function CanvasSketchWrapper({
-  key,
   renderer,
   settings = defaultSettings,
   // TODO make panel config view only if false?
