@@ -33,7 +33,7 @@ const sentenceGrid = (payload) => async ({ context, width, height }) => {
 
   const points = createGrid();
 
-  const fontUrl = '/assets/fonts/SpaceGrotesk-Bold.otf';
+  const fontUrl = process.env.PUBLIC_URL + '/assets/fonts/SpaceGrotesk-Bold.otf';
   const font = new window.FontFace(
     'SpaceGrotesk-Bold',
     `url(${fontUrl})`

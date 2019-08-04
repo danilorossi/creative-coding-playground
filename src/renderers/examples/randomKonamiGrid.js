@@ -31,7 +31,7 @@ const randomKonamiGrid = (payload) => async ({ context, width, height }) => {
 
   let points = createGrid().filter(() => random.chance(0.5));
 
-  const fontUrl = '/assets/fonts/SpaceGrotesk-Medium.woff';
+  const fontUrl = process.env.PUBLIC_URL + '/assets/fonts/SpaceGrotesk-Medium.woff';
   const font = new window.FontFace(
     'SpaceGrotesk-Medium',
     `url("${fontUrl}")`
