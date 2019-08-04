@@ -4,13 +4,12 @@ const random = require('canvas-sketch-util/random');
 
 const randomColorSizeGrid = (payload) => ({ context, width, height }) => {
   let palette = random.pick(palettes);
+  palette = random.shuffle(palette);
+  palette = palette.slice(0, random.rangeFloor(2, palette.length + 1));
 
-palette = random.shuffle(palette);
-palette = palette.slice(0, random.rangeFloor(2, palette.length + 1));
+  const background = palette.shift();
 
-const background = palette.shift();
-
-const count = 30;
+  const count = 30;
 
   const createGrid = () => {
     const points = [];
@@ -37,23 +36,23 @@ const count = 30;
 
   const margin = width * 0.175;
 
-     context.fillStyle = background;
-     context.fillRect(0, 0, width, height);
+  context.fillStyle = background;
+  context.fillRect(0, 0, width, height);
 
-     points.forEach(data => {
-       const {
-         position,
-         radius,
-         color
-       } = data;
-       const x = lerp(margin, width - margin, position[0]);
-       const y = lerp(margin, height - margin, position[1]);
+  points.forEach(data => {
+    const {
+      position,
+      radius,
+      color
+    } = data;
+    const x = lerp(margin, width - margin, position[0]);
+    const y = lerp(margin, height - margin, position[1]);
 
-       context.beginPath();
-       context.arc(x, y, radius, 0, Math.PI * 2);
-       context.fillStyle = color;
-       context.fill();
-     });
+    context.beginPath();
+    context.arc(x, y, radius, 0, Math.PI * 2);
+    context.fillStyle = color;
+    context.fill();
+  });
 };
 
 export const randomColorSizeGridSketchMeta = {

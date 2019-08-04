@@ -4,9 +4,7 @@ const { lerp } = require('canvas-sketch-util/math');
 const random = require('canvas-sketch-util/random');
 const palettes = require('nice-color-palettes/1000.json');
 
-
 random.setSeed(random.getRandomSeed());
-
 
 const generativeWallDrawing = ({ gridSize }) => ({ context, width, height }) => {
 
@@ -25,8 +23,6 @@ const generativeWallDrawing = ({ gridSize }) => ({ context, width, height }) => 
   };
 
   const points = createGrid();
-
-
 
   const createTuples = (points) => {
     const result = []
@@ -50,11 +46,8 @@ const generativeWallDrawing = ({ gridSize }) => ({ context, width, height }) => 
   context.fillStyle = bgColor;
   context.fillRect(0, 0, width, height);
 
-
   context.strokeStyle = bgColor;
   context.lineWidth = 40;
-
-
 
   tuples.forEach(({ tuple }) => {
 

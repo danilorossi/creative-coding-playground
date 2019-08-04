@@ -39,7 +39,7 @@ function AboutPage(key) {
         <b>Spaghetti code warning!</b>
       </Typography>
       <Typography className={classes.section}  variant="body1" gutterBottom>
-        This is a <b>work-in-progress proof of concept</b> and it's not meant (for now) to be a reference on any topic in any way - including React, the library I used to create this page.
+        This is a <b>work-in-progress proof of concept</b> and it's not meant, for now, to be a reference on any topic in any way - JS, React, canvas, project structure, etc.
         If you are still curious, you can check the code on {getLink('https://github.com/danilorossi/creative-coding-playground', classes.link, 'GitHub')}
       </Typography>
 

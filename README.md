@@ -1,8 +1,15 @@
-## What's this
+## What's this?
 
 Creative Coding Playground is a page I am developing in my free time as a learning tool for the [Creative Coding with Canvas & WebGL](https://frontendmasters.com/courses/canvas-webgl/) course by [Matt DesLauriers](https://github.com/mattdesl) on Frontend Masters.
 
-This is a <b>work-in-progress proof of concept</b> and it's not meant (for now) to be a reference on any topic in any way - including React, the library I used to create this page.
+## Spaghetti code warning!
+This is a <b>work-in-progress proof of concept</b> and it's not meant, for now, to be a reference on any topic in any way - JS, React, canvas, project structure, etc.
+
+## Next steps
+- Refactor renderer files as they are not currently structured and there is a lot of duplication (also useful for code showing purposes on the webpage)
+- Delegate heavy computation to a WebWorker - using Context APIs most probably
+- Add new examples for [ThreeJS](https://threejs.org/)
+- Fix canvas 'export to image' feature from the original [canvas-sketch](https://github.com/mattdesl/canvas-sketch) library, as the behavior is not correct in my application (probably due to canvas reuse across multiple sketches)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

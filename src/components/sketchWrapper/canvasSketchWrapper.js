@@ -46,11 +46,8 @@ function CanvasSketchWrapper({
     } );
   }, [ renderer, settings, updateCount, nextPayload ]);
 
-  const redraw = () => {
-    setUpdateCount(updateCount + 1)
-  };
-  const generate = () => {
-    setNextPayload(temporaryPayload)
+  const redraw = (useUpdatedPayload = false) => {
+    useUpdatedPayload && setNextPayload(temporaryPayload)
     setUpdateCount(updateCount + 1)
   };
   const onFieldValueChange = (fieldKey, nextValue) => {
@@ -73,7 +70,7 @@ function CanvasSketchWrapper({
 
           {showRefreshButton &&
           <Tooltip title="Redraw sketch" aria-label="add">
-            <Fab size="small" onClick={ showConfigPanel ? generate : redraw } aria-label="Reload"
+            <Fab size="small" onClick={() => redraw(showConfigPanel) } aria-label="Reload"
               className={classes.fab} color='secondary'>
               <Loop title="Redraw"/>
             </Fab>
