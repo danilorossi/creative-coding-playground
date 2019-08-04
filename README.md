@@ -1,3 +1,9 @@
+## What's this
+
+Creative Coding Playground is a page I am developing in my free time as a learning tool for the [Creative Coding with Canvas & WebGL](https://frontendmasters.com/courses/canvas-webgl/) course by [Matt DesLauriers](https://github.com/mattdesl) on Frontend Masters.
+
+This is a <b>work-in-progress proof of concept</b> and it's not meant (for now) to be a reference on any topic in any way - including React, the library I used to create this page.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -29,8 +29,8 @@ function AboutPage(key) {
         <b>About</b>
       </Typography>
       <Typography className={classes.section}  variant="body1" gutterBottom>
-        This is a page I am developing as a personal learning tool for the {getLink('https://frontendmasters.com/courses/canvas-webgl/', classes.link, 'Creative Coding with Canvas & WebGL')}
-        course on Frontend Masters by {getLink('https://github.com/mattdesl', classes.link, 'Matt DesLauriers')}
+        "Creative Coding Playground" is a page I am developing in my free time as a learning tool for the {getLink('https://frontendmasters.com/courses/canvas-webgl/', classes.link, 'Creative Coding with Canvas & WebGL')}
+        course by {getLink('https://github.com/mattdesl', classes.link, 'Matt DesLauriers')} on Frontend Masters
       </Typography>
 
       <br/>
