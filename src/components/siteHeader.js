@@ -21,7 +21,7 @@ function SiteHeader({ title, onMenuIconClick }) {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap>
-        { title }  <Chip color="secondary" size="small" label="Beta" />
+        { title }  <Chip color="secondary" size="small" label="alpha" />
         </Typography>
       </Toolbar>
     </AppBar>

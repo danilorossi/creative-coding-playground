@@ -39,14 +39,14 @@ function AboutPage(key) {
         <b>Spaghetti code warning!</b>
       </Typography>
       <Typography className={classes.section}  variant="body1" gutterBottom>
-        This is a <b>work-in-progress / proof-of-concept</b> and it's not meant (for now) to be a reference on any topic in any way - including React:) which is the library I created this page with.
+        This is a <b>work-in-progress proof of concept</b> and it's not meant (for now) to be a reference on any topic in any way - including React, the library I used to create this page.
         If you are still curious, you can check the code on {getLink('https://github.com/danilorossi/creative-coding-playground', classes.link, 'GitHub')}
       </Typography>
 
       <br/>
 
       <Typography variant="subtitle1" gutterBottom>
-        If you have any questions, feel free to reach out to me: {getLink('http://danilorossi.me', classes.link, 'http://danilorossi.me')}
+        Feel free to say hello anytime! {getLink('http://danilorossi.me', classes.link, 'http://danilorossi.me')}
       </Typography>
     </div>
   )

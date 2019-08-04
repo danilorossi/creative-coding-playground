@@ -21,12 +21,12 @@ function App() {
 
   const [ selectedSection, setSelectedSection ] = useState(headSections[0].title);
 
-  const [ value, setValue ] = React.useState(0);
+  const [ selectedIndex, setSelectedIndex ] = React.useState(0);
 
   const [ drawerOpen, setDrawerOpen ] = React.useState(false);
 
   function handleTabChange(event, newValue) {
-    setValue(newValue);
+    setSelectedIndex(newValue);
   }
 
   return (
@@ -45,7 +45,7 @@ function App() {
         experiments={experiments}
         onOverlayClick={() => setDrawerOpen(false)}
         onSelect={(title) => {
-          setValue(0);
+          setSelectedIndex(0);
           setSelectedSection(title)
           setDrawerOpen(false)
         }}
@@ -69,7 +69,7 @@ function App() {
 
               return <SketchPage
                 sketchMeta={sketchMeta}
-                value={value}
+                value={selectedIndex}
                 handleTabChange={handleTabChange}
                 key={index}
               />
@@ -84,7 +84,7 @@ function App() {
 
                 return <SketchPage
                   sketchMeta={sketchMeta}
-                  value={value}
+                  value={selectedIndex}
                   handleTabChange={handleTabChange}
                   key={index}
                 />
