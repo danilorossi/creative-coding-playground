@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Creative Coding Playground",
+  "short_name": "Creative Coding Playground",
   "icons": [
     {
       "src": "favicon.ico",
