@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { makeStyles, Fab } from '@material-ui/core';
+import { makeStyles, Fab, Tooltip } from '@material-ui/core';
 import { Loop } from '@material-ui/icons';
 import canvasSketch from 'canvas-sketch';
 import SketchConfigPanel from './sketchConfigPanel';
@@ -73,10 +73,12 @@ function CanvasSketchWrapper({
           />}
 
           {showRefreshButton &&
-          <Fab size="small" onClick={ showConfigPanel ? generate : redraw } aria-label="Reload"
-            className={classes.fab} color='secondary'>
-            <Loop title="Redraw"/>
-          </Fab>}
+          <Tooltip title="Redraw sketch" aria-label="add">
+            <Fab size="small" onClick={ showConfigPanel ? generate : redraw } aria-label="Reload"
+              className={classes.fab} color='secondary'>
+              <Loop title="Redraw"/>
+            </Fab>
+          </Tooltip>}
 
           <canvas ref={refCanvas} />
         </div>

@@ -47,7 +47,7 @@ const sentenceGrid = (payload) => async ({ context, width, height }) => {
 
   const margin = width * 0.175;
 
-  context.fillStyle = bgColor;
+  context.fillStyle = 'white';
   context.fillRect(0, 0, width, height);
 
   points.forEach(([ u, v, character ]) => {
