@@ -21,7 +21,9 @@ function App() {
 
   const [ selectedSection, setSelectedSection ] = useState(headSections[0].title);
 
-  const [value, setValue] = React.useState(0);
+  const [ value, setValue ] = React.useState(0);
+
+  const [ drawerOpen, setDrawerOpen ] = React.useState(false);
 
   function handleTabChange(event, newValue) {
     setValue(newValue);
@@ -33,15 +35,19 @@ function App() {
       <CssBaseline />
       <SiteHeader
         title="Creative Coding playground"
+        onMenuIconClick={() => setDrawerOpen(true)}
       />
       <SideMenu
+        open={drawerOpen}
         selected={selectedSection}
         headSections={headSections}
         examples={examples}
         experiments={experiments}
+        onOverlayClick={() => setDrawerOpen(false)}
         onSelect={(title) => {
           setValue(0);
           setSelectedSection(title)
+          setDrawerOpen(false)
         }}
       />
 

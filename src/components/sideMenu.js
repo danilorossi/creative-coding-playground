@@ -11,7 +11,7 @@ import {
 const drawerWidth = 200;
 
 // TODO use responsive drawer
-function SideMenu({ headSections, examples, experiments, selected, onSelect }) {
+function SideMenu({ open, headSections, examples, experiments, selected, onSelect, onOverlayClick }) {
 
   const classes = useStyles();
 
@@ -25,14 +25,13 @@ function SideMenu({ headSections, examples, experiments, selected, onSelect }) {
   return (
     <Drawer
       className={classes.drawer}
-      variant="persistent"
       anchor="left"
-        open={true}
+      open={open}
       classes={{
         paper: classes.drawerPaper,
       }}
+      onClose={onOverlayClick}
     >
-      <div className={classes.toolbar} />
       <List>
         {headSections.map(({ title }, index) => getMenuItem(title, index, selected))}
       </List>
