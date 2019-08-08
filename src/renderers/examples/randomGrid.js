@@ -39,7 +39,7 @@ const randomGrid = ({ gridSize }) => ({ context, width, height }) => {
 
 export const randomGridSketchMeta = {
   title: 'Random Grid',
-  fileName: 'randomGrid.js',
+  fileName: 'examples/randomGrid.js',
   renderer: randomGrid,
   showRefresh: true,
   payload: {

@@ -77,7 +77,7 @@ const sentenceGrid = (payload) => async ({ context, width, height }) => {
 
 export const sentenceGridSketchMeta = {
   title: 'Sentence Grid',
-  fileName: 'sentenceGrid.js',
+  fileName: 'experiments/sentenceGrid.js',
   renderer: sentenceGrid,
   showRefresh: true,
   payload: {

@@ -37,7 +37,7 @@ const simpleGrid = (payload) => ({ context, width, height }) => {
 
 export const simpleGridSketchMeta = {
   title: 'Simple Grid',
-  fileName: 'simpleGrid.js',
+  fileName: 'examples/simpleGrid.js',
   renderer: simpleGrid,
   showRefresh: false,
 };

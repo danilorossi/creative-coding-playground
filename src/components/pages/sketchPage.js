@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import Highlight from 'react-highlight.js';
@@ -19,6 +19,21 @@ function SketchPage({ sketchMeta, value, handleTabChange }) {
   } = sketchMeta;
 
   const classes = useStyles();
+
+  // TODO will refactor renderers in multiple files
+  const [ sourceFiles, setSourceFiles ] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+
+      // TODO refactor with path or sketch category -> folder
+      const resp = await fetch(`https://raw.githubusercontent.com/danilorossi/creative-coding-playground/master/src/renderers/${fileName}`)
+      const sourceCode = await resp.text()
+      setSourceFiles([ sourceCode ])
+    }
+    fetchData()
+  }, [ sketchMeta ])
+
   return (
     <div key={Date.now()}>
 
@@ -51,7 +66,7 @@ function SketchPage({ sketchMeta, value, handleTabChange }) {
      {value === 1 &&
        <div style={{ padding: 25, marginTop: 10, background: 'white' }}>
         <Highlight language={'javascript'}>
-          {renderer.toString()}
+          {sourceFiles[0]}
         </Highlight>
         {false && <Typography>
            <Link target="_blank" rel="noopener" href={`//TODO/${fileName}`} className={classes.link}>

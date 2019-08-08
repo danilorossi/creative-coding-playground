@@ -68,7 +68,7 @@ const randomGridPainting = (payload) => async ({ context, width, height }) => {
 
 export const randomGridPaintingSketchMeta = {
   title: 'Random Grid Painting',
-  fileName: 'randomGridPainting.js',
+  fileName: 'examples/randomGridPainting.js',
   renderer: randomGridPainting,
   showRefresh: true
 };

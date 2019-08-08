@@ -75,7 +75,7 @@ const generativeWallDrawing = ({ gridSize }) => ({ context, width, height }) => 
 
 export const generativeWallDrawingSketchMeta = {
   title: 'Generative Wall Drawing',
-  fileName: 'generativeWallDrawing.js',
+  fileName: 'experiments/generativeWallDrawing.js',
   renderer: generativeWallDrawing,
   showRefresh: true,
   payload: {

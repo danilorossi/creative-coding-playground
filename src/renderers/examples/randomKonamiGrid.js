@@ -66,7 +66,7 @@ const randomKonamiGrid = (payload) => async ({ context, width, height }) => {
 
 export const randomKonamiGridSketchMeta = {
   title: 'Random Konami Grid',
-  fileName: 'randomKonamiGrid.js',
+  fileName: 'examples/randomKonamiGrid.js',
   renderer: randomKonamiGrid,
   showRefresh: true
 };

@@ -57,7 +57,7 @@ const randomColorSizeGrid = (payload) => ({ context, width, height }) => {
 
 export const randomColorSizeGridSketchMeta = {
   title: 'Random Color & Size Grid',
-  fileName: 'randomColorSizeGrid.js',
+  fileName: 'examples/randomColorSizeGrid.js',
   renderer: randomColorSizeGrid,
   showRefresh: true
 };
