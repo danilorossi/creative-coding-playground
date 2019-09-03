@@ -25,7 +25,8 @@ const useStyles = makeStyles(theme => ({
 
 function CanvasSketchWrapper({
   renderer,
-  settings = defaultSettings,
+  // settings = defaultSettings,
+  settings,
   // TODO make panel config view only if false?
   showRefreshButton = false,
   payload = null,
@@ -39,12 +40,13 @@ function CanvasSketchWrapper({
   const [temporaryPayload, setTemporaryPayload] = useState(nextPayload);
 
   useEffect(() => {
-    const sketch = () => renderer(nextPayload);
+    const sketch = () => renderer(nextPayload, refCanvas.current);
+    const sets = {...defaultSettings, ...(settings||{})};
     canvasSketch(sketch, {
-      ...settings,
+      ...sets,
       canvas: refCanvas.current
     } );
-  }, [ renderer, settings, updateCount, nextPayload ]);
+  }, [ settings, updateCount, nextPayload ]);
 
   const redraw = (useUpdatedPayload = false) => {
     useUpdatedPayload && setNextPayload(temporaryPayload)
